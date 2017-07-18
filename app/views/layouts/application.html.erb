@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Qa</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+
+  <div class="ui equal width grid">
+    <div class="column">
+      <div class="ui visible sidebar vertical menu">
+        <%= link_to toggle_language_path, remote: true, class: 'item' do %>
+          Change QA
+          <i class="home icon"></i>
+        <% end %>
+        <a class="item">
+          <i class="save icon"></i>
+          <%= react_component 'Comp' %>
+        </a>
+        <a class="item">
+          <%= react_component('Clock', session_: @session_started) %>
+        </a>
+      </div>
+    </div>
+
+    <div class="column">
+      <%= yield %>
+    </div>
+
+    <div class="column">
+      <div>
+        <!--<i class="email icon"></i>-->
+        <%= react_component'Email' %>
+      </div>
+    </div>
+
+  </div>
+
+
+  </body>
+
+<div class="footer">
+   Ruby / Rails / jQuery. Questionnaire 2017.
+</div>
+
+</html>

@@ -1,0 +1,9 @@
+if(!$("#myPopup").length) {
+    str = "<div class='popup'><span class='popuptext' id='myPopup'>Saved to export.csv</span></div>"
+    $('#saveButton').append(str);
+    //addClass() doesn't go into the 'fx' queue, so put it in there manually
+    $('#myPopup').addClass('show').delay(3000).queue(function () {
+        $(this).removeClass('show');
+        $(this).dequeue();
+    });
+}

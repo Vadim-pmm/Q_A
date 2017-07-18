@@ -1,0 +1,34 @@
+.my-toggle
+  #my_toggle.ui.toggle.checkbox
+    input[type='checkbox' name='lang' checked=check_it data-remote='true' data-url='/toggle_language' data-method='get']
+    label
+      | jQuery
+
+.ui.two.column.centered.grid.mystyle
+  .two.column.row
+    .column
+      - if @questions.length > 0
+        = react_component('QAButton', key: 0, btn_id: 'btn_1', question_id: @questions[0][:id], category: @questions[0][:category])
+    .column
+      - if @questions.length > 1
+        = react_component('QAButton', key: 1, btn_id: 'btn_2', question_id: @questions[1][:id], category: @questions[1][:category])
+
+  .two.column.row
+    .column
+      - if @questions.length > 2
+        = react_component('QAButton', key: 2, btn_id: 'btn_3', question_id: @questions[2][:id], category: @questions[2][:category])
+    .column
+      - if @questions.length > 3
+        = react_component('QAButton', key: 3, btn_id: 'btn_4', question_id: @questions[3][:id], category: @questions[3][:category])
+
+#modal_form.ui.small.modal
+  i.close.icon
+  #myquestion.header
+
+  #myanswer.content
+
+  .actions
+    #btn_ok.ui.approve.button
+      | Ответ 
+    #btn_cancel.ui.cancel.button
+      | Закрыть
