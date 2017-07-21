@@ -13,20 +13,20 @@
 ActiveRecord::Schema.define(version: 20170529124012) do
 
   create_table "answers", force: :cascade do |t|
-    t.integer  "question_id"
+    t.integer "question_id"
     t.datetime "session_id"
-    t.datetime "created_at",  null: false
+    t.datetime "created_at", null: false
     t.index ["question_id"], name: "index_answers_on_question_id"
   end
 
   create_table "questions", force: :cascade do |t|
-    t.string   "question"
-    t.text     "answer"
-    t.string   "category"
-    t.string   "lang",       limit: 2
-    t.datetime "created_at",           null: false
+    t.string "question", null: false
+    t.text "answer", null: false
+    t.string "category", null: false
+    t.string "lang", null: false
+    t.datetime "created_at", null: false
+    t.index ["category"], name: "index_questions_on_category"
     t.index ["lang"], name: "index_questions_on_lang"
-    t.index ["question"], name: "index_questions_on_question"
   end
 
 end

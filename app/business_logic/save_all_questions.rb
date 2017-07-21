@@ -1,13 +1,14 @@
 module SaveAllQuestions
-  require 'csv'
+  require 'json'
 
   def save_all_questions
-    questions = Question.all
-    CSV.open('export.csv', 'a', col_sep: ';', headers: true) do |f|
-      f << %w(Question Answer Language Category)
-      questions.each do |q|
-        f << [q.question, q.answer, q.lang, q.category]
-      end
+    questions = []
+    Question.all.each do |item|
+      questions << { question: item.question, answer: item.answer, category: item.category, lang: item.lang }
     end
+    f = File.new('export.json', 'w')
+    JSON.dump(questions, f)
+    f.close
   end
+
 end
