@@ -11,7 +11,6 @@ function showModal(question, answer, btn_id, question_id) {
         },
 
         onHide: function (e) {
-            //$('#'+btn_id).hide();
             $.get('/mark_question_as_answered/' + question_id);
             if ($("button[id*='btn_']:hidden").length === 4 ) {
                 location.reload();

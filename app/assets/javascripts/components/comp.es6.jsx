@@ -10,7 +10,12 @@ class Comp extends React.Component {
     }
 
     render() {
-        return (<div onClick={this.handleClick}><span id='saveButton'>Save</span></div>);
+        return (
+            /*<div onClick={this.handleClick}><span id='saveButton'>Save</span></div>*/
+            <button className='ui primary basic button' onClick={this.handleClick} id='saveButton'>
+                <i className='save icon'></i>
+                <span><strong>Save</strong></span>
+            </button>
+        );
     }
 }
-

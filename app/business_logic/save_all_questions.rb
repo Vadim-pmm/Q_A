@@ -11,4 +11,14 @@ module SaveAllQuestions
     f.close
   end
 
+  def parse_and_save(file_)
+    begin
+      new_question = JSON.load(File.open(file_.path))
+      Question.create(new_question)
+      return 200
+    rescue
+      return 422
+    end
+  end
+
 end

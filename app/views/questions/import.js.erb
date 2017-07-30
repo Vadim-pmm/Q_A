@@ -1,0 +1,12 @@
+let str = '';
+let r = <%= @result %>;
+if (r == 200) {
+    str = "<div class='popup'><span class='popuptext' id='myPopup'>Imported</span></div>";
+}
+else {
+    str = "<div class='popup'><span class='popuptext' id='myPopup'>Error !</span></div>";
+}
+console.log('---------------');
+console.log(r);
+$('#importButton').append(str);
+showPopup();
