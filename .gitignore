@@ -17,5 +17,5 @@
 .rubocop.yml
 export.csv
 export.json
+new_question.json
 config/secrets.yml
-

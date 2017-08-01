@@ -3,12 +3,16 @@ require 'rails_helper'
 describe Question do
 
   # validations - db level
-  it 'prevents questions with empty fields' do
-    valid_record = '<p>Some text </p>'
-    empty_record = nil
-    new_question = Question.create(question: valid_record, answer: valid_record,
-                                category: empty_record, lang: empty_record)
-    expect(new_question.errors.count).to eq(0)
+  it 'prevents questions with empty <category>' do
+    invalid_record = { question:'<p>Some text </p>', answer: '<p>Some text </p>', category: nil, lang: 'RoR' }
+
+    expect { Question.create(invalid_record) }.to raise_error(ActiveRecord::NotNullViolation)
+  end
+
+  it 'prevents questions with empty <lang>' do
+    invalid_record = { question:'<p>Some text </p>', answer: '<p>Some text </p>', category: 'JQuery', lang: nil }
+
+    expect { Question.create(invalid_record) }.to raise_error(ActiveRecord::NotNullViolation)
   end
 
   # validations - model level

@@ -5,7 +5,6 @@ class QuestionsController < ApplicationController
   def index
     set_session
     @session_started = session[:last_time]
-    puts 'я тут'
 
     @questions = Question.get_unanswered(session[:lang], session[:last_time]).map { |u| { category: u.category, id: u.id } }
     if @questions.length == 0
@@ -17,7 +16,7 @@ class QuestionsController < ApplicationController
 
   def import
     @result = parse_and_save(params['file'])
-    puts @result
+
     respond_to do |format|
       format.js { render 'import', status: @result }
     end
