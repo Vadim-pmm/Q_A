@@ -1,4 +1,4 @@
-# Ruby, Rails, JQuery Q&A app
+## Ruby, Rails, JQuery Q&A app
 
 An app which encourages you to answer some questions related to Ruby, Rails and JQuery.
 No ratings; session will last 20 minutes.
@@ -6,17 +6,16 @@ No ratings; session will last 20 minutes.
 The results can be send by email in pdf format.
 You can add your own question to the database by pressing the button <strong>Import</strong> and loading a file. A file should contain one array of jsons like :
 
+```
 [
-
-{"question":" &lt;p&gt;... some question #1... ?&lt;/p&gt;", "answer": "&lt;p&gt;... some answer ...&lt;/p&gt;", "category":"Ruby", "lang":"RoR"},
-{"question":" &lt;p&gt;... some question #2... ?&lt;/p&gt;", "answer": "&lt;p&gt;... some answer ...&lt;/p&gt;", "category":"JQuery", "lang":"JQuery"}
-
+{"question":"<p>... some question №1...</p>", "answer": "<p>... some answer ...</p>", "category":"Ruby", "lang":"RoR"},
+{"question":"<p>... some question №2...</p>", "answer": "<p>... some answer ...</p>", "category":"JQuery", "lang":"JQuery"}
 ]
+```
+The values of `'question'` and `'answer'` have to be be wrapped in <b>&lt;p&gt;&lt;/p&gt;</b> tags. You can use HTML inside those tags as you wish.
 
-The values of 'question' and 'answer' have to be be wrapped in &lt;p&gt;&lt;/p&gt; tags. You can use HTML inside those tags as you wish.
-
-The key 'category' should be either 'Ruby' or 'Rails' or 'JQuery'.
-The key 'lang' should be either 'RoR' or 'JQuery'.
+The key `'category'` should be either 'Ruby' or 'Rails' or 'JQuery'.
+The key `'lang'` should be either 'RoR' or 'JQuery'.
 
 All keys in hash are mandatory.
  

@@ -1,0 +1,10 @@
+.ui.visible.very.wide.sidebar.vertical.menu
+  = link_to toggle_language_path, remote: true, class: 'item' do
+    |  Change QA
+    i.home.icon
+  a.item
+    = react_component 'Comp'
+  a.item
+    = react_component('Clock', session_: @session_started)
+  a.item
+    = react_component('ImportButton')

@@ -12,21 +12,7 @@
 
   <div class="ui equal width grid">
     <div class="column">
-      <div class="ui visible very wide sidebar vertical menu">
-        <%= link_to toggle_language_path, remote: true, class: 'item' do %>
-          Change QA
-          <i class="home icon"></i>
-        <% end %>
-        <a class="item">
-          <%= react_component 'Comp' %>
-        </a>
-        <a class="item">
-          <%= react_component('Clock', session_: @session_started) %>
-        </a>
-        <a class="item">
-          <%= react_component('ImportButton') %>
-        </a>
-      </div>
+      <%= render 'layouts/left_bar' %>
     </div>
 
     <div class="column">
